@@ -7,6 +7,7 @@ RUN apt-get install -y krb5-admin-server
 
 RUN mkdir /var/log/kerberos
 
+COPY kadm5.acl /etc/krb5kdc/kadm5.acl
 COPY krb5.conf /etc/krb5.conf
 RUN kdb5_util -P password -r EXAMPLE.ORG create -s
 
