@@ -2,7 +2,7 @@ version: '3'
 services:
   kadmin:
     build: kadmin/
-    image: mans0954/kadmin
+    image: mans0954/kerberos-kadmin
     container_name: kadmin
     domainname: example.org
     volumes:
@@ -13,7 +13,7 @@ services:
       - example
   kdc:
     build: kdc/
-    image: mans0954/kdc
+    image: mans0954/kerberos-kdc
     container_name: kdc
     domainname: example.org
     volumes:
