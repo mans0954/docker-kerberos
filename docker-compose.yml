@@ -7,7 +7,7 @@ services:
     domainname: example.org
     volumes:
       - krb5kdc:/etc/krb5kdc
-      - ./kadmin/krb5.conf:/etc/krb5.conf
+      - ./kadmin/krb5.conf:/etc/kadmin/krb5.conf
     networks:
       - example
   kdc:
@@ -17,7 +17,7 @@ services:
     domainname: example.org
     volumes:
       - krb5kdc:/etc/krb5kdc
-      - ./kdc/krb5.conf:/etc/krb5.conf
+      - ./kdc/krb5.conf:/etc/kdc/krb5.conf
     networks:
       - example
 

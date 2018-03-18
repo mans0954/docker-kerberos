@@ -6,8 +6,9 @@ RUN apt-get install -y krb5-kdc
 
 RUN mkdir /var/log/kerberos
 
-#COPY krb5.conf /etc/krb5.conf
-RUN rm /etc/krb5.conf
+RUN mkdir /etc/kdc
+RUN mv /etc/krb5.conf /etc/kdc/krb5.conf
+RUN ln -s /etc/kdc/krb5.conf /etc/krb5.conf
 
 EXPOSE 88
 
